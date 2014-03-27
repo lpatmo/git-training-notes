@@ -1,7 +1,7 @@
 #Github Training Notes
 
 ####Background:
-Notes from a day-long training held at Gilt by Github trainer https://twitter.com/PeterBell, organized in Q/A format. The training assumed that attendees were already familiar with using version control in some way. 
+These are my edited notes from a day-long training held at Gilt by Github trainer https://twitter.com/PeterBell, organized in Q/A format. The training assumed that attendees were already familiar with using version control. 
 
 ####Table of Contents:
 I. General Notes to Remember
@@ -10,7 +10,7 @@ III. How to Undo
 IV. External Resources
 
 ###I. General Notes To Remember
-#####How do I change my check or configure a user name?
+#####How do I check or configure a user name?
 ```
 git config --global user.name
 ```
