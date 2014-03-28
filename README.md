@@ -5,45 +5,45 @@ These are my edited notes from a day-long training held at Gilt by Github traine
 
 ####Table of Contents:
 #####[I. General Commands to Remember](https://github.com/lpatmo/git-training-notes#i-general-commands-to-remember-1)
-*[How do I check or configure a username?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-configure-a-username)
-*[How do I check or change my e-mail address?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-change-my-e-mail-address)
-*[What's the most simple workflow for creating and pushing up to a repository?](https://github.com/lpatmo/git-training-notes#whats-the-most-simple-workflow-for-creating-and-pushing-up-to-a-repository)
-*[How do I rename or delete a file?](https://github.com/lpatmo/git-training-notes#how-do-i-rename-or-delete-a-file)
-*[How do I create a new branch?](https://github.com/lpatmo/git-training-notes#how-do-i-create-a-new-branch)
-*[How do I switch to a branch?](https://github.com/lpatmo/git-training-notes#how-do-i-switch-to-a-branch)
-*[How do I see all the branches?](https://github.com/lpatmo/git-training-notes#how-do-i-see-all-the-branches)
-*[What does it mean when your terminal tells you "your branch is ahead of 'origin/master' by 3 commits"?](https://github.com/lpatmo/git-training-notes#what-does-it-mean-when-your-terminal-tells-you-your-branch-is-ahead-of-originmaster-by-3-commits)
-*[.gitignore?](https://github.com/lpatmo/git-training-notes#gitignore)
-*[How do I create and then merge a branch?](https://github.com/lpatmo/git-training-notes#how-do-i-create-and-then-merge-a-branch)
-*[How do I do a recursive merge, and why is a recursive merge preferable to a fast-forward merge?](https://github.com/lpatmo/git-training-notes#how-do-i-do-a-recursive-merge-and-why-is-a-recursive-merge-preferable-to-a-fast-forward-merge)
-*[How do I resolve a merge conflict?](https://github.com/lpatmo/git-training-notes#how-do-i-resolve-a-merge-conflict)
-*[What is git rebase, and why do I need to do it?](https://github.com/lpatmo/git-training-notes#what-is-git-rebase-and-why-do-i-need-to-do-it)
-*[Can you give me an example of when I would use git rebase?](https://github.com/lpatmo/git-training-notes#can-you-give-me-an-example-of-when-i-would-use-git-rebase)
-*[What happens if there is a rebase conflict?](https://github.com/lpatmo/git-training-notes#what-happens-if-there-is-a-rebase-conflict)
-*[What do I do if I forget the --no-ff when I merge?](https://github.com/lpatmo/git-training-notes#what-do-i-do-if-i-forget-the---no-ff-when-i-merge)
-*[What is the difference between a git fetch and a git pull?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-a-git-fetch-and-a-git-pull)
-*[Why should I do a git fetch but not a git pull?](https://github.com/lpatmo/git-training-notes#why-should-i-do-a-git-fetch-but-not-a-git-pull)
-*[What is the difference between git pull --rebase' andgit fetch+git rebase origin master`?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-git-pull---rebase-andgit-fetchgit-rebase-origin-master)
-*[When would I clone a repository from the shared repository and when should I fork a repository?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-git-pull---rebase-andgit-fetchgit-rebase-origin-master)
+* [How do I check or configure a username?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-configure-a-username)
+* [How do I check or change my e-mail address?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-change-my-e-mail-address)
+* [What's the most simple workflow for creating and pushing up to a repository?](https://github.com/lpatmo/git-training-notes#whats-the-most-simple-workflow-for-creating-and-pushing-up-to-a-repository)
+* [How do I rename or delete a file?](https://github.com/lpatmo/git-training-notes#how-do-i-rename-or-delete-a-file)
+* [How do I create a new branch?](https://github.com/lpatmo/git-training-notes#how-do-i-create-a-new-branch)
+* [How do I switch to a branch?](https://github.com/lpatmo/git-training-notes#how-do-i-switch-to-a-branch)
+* [How do I see all the branches?](https://github.com/lpatmo/git-training-notes#how-do-i-see-all-the-branches)
+* [What does it mean when your terminal tells you "your branch is ahead of 'origin/master' by 3 commits"?](https://github.com/lpatmo/git-training-notes#what-does-it-mean-when-your-terminal-tells-you-your-branch-is-ahead-of-originmaster-by-3-commits)
+* [.gitignore?](https://github.com/lpatmo/git-training-notes#gitignore)
+* [How do I create and then merge a branch?](https://github.com/lpatmo/git-training-notes#how-do-i-create-and-then-merge-a-branch)
+* [How do I do a recursive merge, and why is a recursive merge preferable to a fast-forward merge?](https://github.com/lpatmo/git-training-notes#how-do-i-do-a-recursive-merge-and-why-is-a-recursive-merge-preferable-to-a-fast-forward-merge)
+* [How do I resolve a merge conflict?](https://github.com/lpatmo/git-training-notes#how-do-i-resolve-a-merge-conflict)
+* [What is git rebase, and why do I need to do it?](https://github.com/lpatmo/git-training-notes#what-is-git-rebase-and-why-do-i-need-to-do-it)
+* [Can you give me an example of when I would use git rebase?](https://github.com/lpatmo/git-training-notes#can-you-give-me-an-example-of-when-i-would-use-git-rebase)
+* [What happens if there is a rebase conflict?](https://github.com/lpatmo/git-training-notes#what-happens-if-there-is-a-rebase-conflict)
+* [What do I do if I forget the --no-ff when I merge?](https://github.com/lpatmo/git-training-notes#what-do-i-do-if-i-forget-the---no-ff-when-i-merge)
+* [What is the difference between a git fetch and a git pull?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-a-git-fetch-and-a-git-pull)
+* [Why should I do a git fetch but not a git pull?](https://github.com/lpatmo/git-training-notes#why-should-i-do-a-git-fetch-but-not-a-git-pull)
+* [What is the difference between git pull --rebase' andgit fetch+git rebase origin master`?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-git-pull---rebase-andgit-fetchgit-rebase-origin-master)
+* [When would I clone a repository from the shared repository and when should I fork a repository?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-git-pull---rebase-andgit-fetchgit-rebase-origin-master)
 
 #####[II. Useful Tips](https://github.com/lpatmo/git-training-notes#ii-useful-tips-1)
-*[How do I see a history of commands I typed into the terminal?](https://github.com/lpatmo/git-training-notes#how-do-i-see-a-history-of-commands-i-typed-into-the-terminal)
-*[What git configuration settings should I take advantage of?](https://github.com/lpatmo/git-training-notes#what-configuration-settings-can-i-take-advantage-of)
-*[https://github.com/lpatmo/git-training-notes#how-do-i-see-whats-under-the-hood-in-git](How do I see what's under the hood in git?)
-*[What are some shortcuts for adding or staging files?](https://github.com/lpatmo/git-training-notes#what-are-some-shortcuts-for-adding-or-staging-files)
-*[How do I see all the changes going into the next commit?](https://github.com/lpatmo/git-training-notes#how-do-i-see-all-the-changes-going-into-the-next-commit)
-*[What if I want to uncommit something from the staging area?](https://github.com/lpatmo/git-training-notes#what-if-i-want-to-uncommit-something-from-the-staging-area)
+* [How do I see a history of commands I typed into the terminal?](https://github.com/lpatmo/git-training-notes#how-do-i-see-a-history-of-commands-i-typed-into-the-terminal)
+* [What git configuration settings should I take advantage of?](https://github.com/lpatmo/git-training-notes#what-configuration-settings-can-i-take-advantage-of)
+* [https://github.com/lpatmo/git-training-notes#how-do-i-see-whats-under-the-hood-in-git](How do I see what's under the hood in git?)
+* [What are some shortcuts for adding or staging files?](https://github.com/lpatmo/git-training-notes#what-are-some-shortcuts-for-adding-or-staging-files)
+* [How do I see all the changes going into the next commit?](https://github.com/lpatmo/git-training-notes#how-do-i-see-all-the-changes-going-into-the-next-commit)
+* [What if I want to uncommit something from the staging area?](https://github.com/lpatmo/git-training-notes#what-if-i-want-to-uncommit-something-from-the-staging-area)
 
 #####[III. Releasing to Production, Stashing, and How to Undo](https://github.com/lpatmo/git-training-notes#iii-releasing-to-production-stashing-and-how-to-undo-1)
-*[What are tags?](https://github.com/lpatmo/git-training-notes#what-are-tags)
-*[What if we need to add a hotfix?](https://github.com/lpatmo/git-training-notes#what-if-we-need-to-add-a-hotfix)
-*[What is cherrypicking?](https://github.com/lpatmo/git-training-notes#what-is-cherrypicking)
-*[What is stashing?](https://github.com/lpatmo/git-training-notes#what-is-stashing)
-*[How do I undo a commit message message that the cat walked over?](https://github.com/lpatmo/git-training-notes#how-do-i-undo-a-commit-message-message-that-the-cat-walked-over)
-*[How do I undo any commit?](https://github.com/lpatmo/git-training-notes#how-do-i-undo-any-commit)
-*[Let's play with git reset! (a.k.a. 'What is git reset?')](https://github.com/lpatmo/git-training-notes#lets-play-with-git-reset-aka-what-is-git-reset)
-*[How do I take the last two commits and squash them into one?](https://github.com/lpatmo/git-training-notes#how-do-i-take-the-last-two-commits-and-squash-them-into-one)
-*[What if I want a file that I excised via git reset --hard back within the next 30 days?](https://github.com/lpatmo/git-training-notes#what-if-i-want-a-file-that-i-excised-via-git-reset---hard-back-within-the-next-30-days)
+* [What are tags?](https://github.com/lpatmo/git-training-notes#what-are-tags)
+* [What if we need to add a hotfix?](https://github.com/lpatmo/git-training-notes#what-if-we-need-to-add-a-hotfix)
+* [What is cherrypicking?](https://github.com/lpatmo/git-training-notes#what-is-cherrypicking)
+* [What is stashing?](https://github.com/lpatmo/git-training-notes#what-is-stashing)
+* [How do I undo a commit message message that the cat walked over?](https://github.com/lpatmo/git-training-notes#how-do-i-undo-a-commit-message-message-that-the-cat-walked-over)
+* [How do I undo any commit?](https://github.com/lpatmo/git-training-notes#how-do-i-undo-any-commit)
+* [Let's play with git reset! (a.k.a. 'What is git reset?')](https://github.com/lpatmo/git-training-notes#lets-play-with-git-reset-aka-what-is-git-reset)
+* [How do I take the last two commits and squash them into one?](https://github.com/lpatmo/git-training-notes#how-do-i-take-the-last-two-commits-and-squash-them-into-one)
+* [What if I want a file that I excised via git reset --hard back within the next 30 days?](https://github.com/lpatmo/git-training-notes#what-if-i-want-a-file-that-i-excised-via-git-reset---hard-back-within-the-next-30-days)
 
 #####IV. Some External Resources
 
@@ -135,7 +135,7 @@ git branch
 It just means that if you lose your laptop right now, you'll lose three commits. So you may want to commit. Typing `git status -s` (or `git s`, if you gave "status -s" an alias -- see below in the Useful Tips section) will not give you this extraneous descriptor.
 
 ####.gitignore?
-Example: put *.log into your .gitignore file in order to git ignore every file that ends with a .log
+Example: put * .log into your .gitignore file in order to git ignore every file that ends with a .log
 
 Try typing `git status` after creating a test file called test.log. Notice that test.log did not show up as something to stage. 
 
@@ -210,7 +210,7 @@ git lg
 ``` 
 
 ####Why is "Should I do git rebase or git merge?" not a useful question?
-This is not a useful question because a merge will always happen. You don't *have* to do rebase, but rebasing will help you when you look back through the history of commits and make progress tracking look more readable, since it'll look like you only worked on one feature at a time. The more people on the team who rebase, the cleaner the final history will appear.  
+This is not a useful question because a merge will always happen. You don't * have*  to do rebase, but rebasing will help you when you look back through the history of commits and make progress tracking look more readable, since it'll look like you only worked on one feature at a time. The more people on the team who rebase, the cleaner the final history will appear.  
 
 ####What happens if there is a rebase conflict?
 You'd resolve the conflict the same way you'd resolve a merge conflict -- by going into the file and editing/deleting lines as appropriate. The difference is that after you `git add .` and `git lg` and `git status`, you'd type `git rebase --continue` instead of `git commit`. Then you'd checkout the master branch again and merge the branch in question. Summary of steps below:
@@ -333,12 +333,12 @@ If I create a new file called index.css, there will be three objects added in .g
 
 ####What are some shortcuts for adding or staging files?
 ```
-git add ab*
+git add ab* 
 ```
 This adds the first two files for staging. 
 
 ```
-git add co*
+git add co* 
 ```
 This adds all untracked files.
 
@@ -350,7 +350,7 @@ This lists all hidden files.
 ```
 git commit -am "commit messages"
 ```
-This adds *and* commits the file(s). This won't work with untracked files, however. 
+This adds * and*  commits the file(s). This won't work with untracked files, however. 
 
 ```
 git branch -a
@@ -437,14 +437,14 @@ Solution:
 ```
 git commit --amend
 ```
-Note that this only works on the *last* commit.
+Note that this only works on the * last*  commit.
 
 
 ####How do I undo any commit?
 Run `git lg` so you can see the hash of the commit. For example:
 ```
-* 83f6a24 (HEAD, master) a bad idea
-* baa9473 added about us pages
+*  83f6a24 (HEAD, master) a bad idea
+*  baa9473 added about us pages
 ```
 In this case, you want to revert the "bad idea" commit message corresponding to 83f6a24. So you'd do:
 
@@ -455,12 +455,12 @@ git revert 83f6a24
 Git will then create a new commit message stating that you reverted the mistake:
 
 ```
-* c91ffbb (HEAD, master) Revert "a bad idea"
-* 83f6a24 a bad idea
-* baa9473 added about us pages
+*  c91ffbb (HEAD, master) Revert "a bad idea"
+*  83f6a24 a bad idea
+*  baa9473 added about us pages
 ```
 
-Yay! But what if you wanted to *revert* your revert?
+Yay! But what if you wanted to * revert*  your revert?
 
 It's easy, now; just find the hash for the revert:
 
@@ -471,10 +471,10 @@ git revert c91ffbb
 So now you'll have something like:
 ```
 $ git lg
-* 80135c7 (HEAD, master) Revert "Revert "a bad idea""
-* c91ffbb Revert "a bad idea"
-* 83f6a24 a bad idea
-* baa9473 added about us pages
+*  80135c7 (HEAD, master) Revert "Revert "a bad idea""
+*  c91ffbb Revert "a bad idea"
+*  83f6a24 a bad idea
+*  baa9473 added about us pages
 ```
 Basically, reverting doesn't change history; it just adds new history.
 
@@ -510,7 +510,7 @@ git commit -m "took the last two commits and squashed them into one"
 ```
 
 ####What if I want a file that I excised via `git reset --hard` back within the next 30 days?
-You can only do this if you're on *the same computer*, and it's not been more than 30 days:
+You can only do this if you're on * the same computer* , and it's not been more than 30 days:
 ```
 git reflog
 ```
@@ -524,6 +524,6 @@ This will undo your `git reset --hard`.
 
 
 ###IV. Some External Resources
-* http://training.github.com/kit/
-* http://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
-* https://www.atlassian.com/git/tutorial/rewriting-git-history#!rebase
+*  http://training.github.com/kit/
+*  http://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
+*  https://www.atlassian.com/git/tutorial/rewriting-git-history#!rebase
