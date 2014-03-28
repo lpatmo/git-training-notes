@@ -312,6 +312,12 @@ git config --global alias.s "status -s"
 ```
 This allows you to type `git s` to get the equivalent of `git status -s`. 
 
+Also, be sure to take advantage of a cleaner `git log`:
+```
+git config --global alias.lg "log --oneline --decorate --all --graph"
+```
+This allows you to get back a clean log wheneve ryou type `git lg`.
+
 Note that all the repositories you create will be configured at --global. If you must write `git config`, it silently implies `--local`.
 
 4. Configure git so that when do a `git push` without specifying a branch, you push just to your branch, not to all matching branches. 
