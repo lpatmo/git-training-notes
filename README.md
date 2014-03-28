@@ -1,7 +1,11 @@
 #Github Training Notes
 
 ####Background:
-These are my edited notes from a day-long training held at Gilt by Github trainer https://twitter.com/PeterBell, organized in Q/A format. The training assumed that attendees were already familiar with using version control. 
+On March, 27th, 2014, I attended a free day-long training held by Git trainer [@Peter Bell](https://twitter.com/PeterBell). These are my edited notes from the day, organized in Question/Answer format. 
+
+IMO, the training is really useful for the intermediate git user. One of the first things we did was to configure git to be more user-friendly, creating aliases such as `git lg` and `git s`. We also delved into more advanced topics such as when to branch, what to do with branches, how to merge branches without any fast forward `--no-ff`, the steps for resolving merge conflicts and rebase conflicts, why `rebase` should be used when working in teams, and how to undo almost any commit. 
+
+We ran out of time a little at the end rushing through cherrypicking and git stashing, but overall it was a wonderful training that broke down concepts into simple examples. Peter Bell delivered the presentation and answered questions with alacrity. 
 
 ####Table of Contents:
 #####[I. General Commands to Remember](https://github.com/lpatmo/git-training-notes#i-general-commands-to-remember-1)
