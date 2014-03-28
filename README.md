@@ -395,7 +395,7 @@ git stash list
 Example problem:
 ```
 git commit -m "added about us pagesldfjsdlfjsldfkjsdf"
-``
+```
 Solution:
 ```
 git commit --amend
