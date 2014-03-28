@@ -5,6 +5,7 @@ These are my edited notes from a day-long training held at Gilt by Github traine
 
 ####Table of Contents:
 #####I. General Commands to Remember
+[How do I check or configure a username?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-configure-a-username)
 #####II. Useful Tips
 #####III. Releasing to Production, Stashing, and How to Undo
 #####IV. Some External Resources
@@ -351,7 +352,7 @@ Whenever you release to production, you should add a tag. There are three types 
 git tag -a r0.1 -m "initial home page release"
 ```
 
-Then if you run `git show r0.1` you can see the tag message. s
+Then if you run `git show r0.1` you'll be able to see the tag message.
 
 ####What if we need to add a hotfix?
 ```
@@ -486,7 +487,7 @@ git reset --hard 0e529c0
 This will undo your `git reset --hard`.
 
 
-###V. Some External Resources
+###IV. Some External Resources
 * http://training.github.com/kit/
 * http://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
 * https://www.atlassian.com/git/tutorial/rewriting-git-history#!rebase
