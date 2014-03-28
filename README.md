@@ -157,10 +157,10 @@ git log --online --decorate --all --graph
 ```
 This makes `git log` output a much cleaner history! So let's make an alias for it:
 
-```git config --global alias.lg "log --oneline --decorate --all --graph
+```
+git config --global alias.lg "log --oneline --decorate --all --graph
 ```
 W00t, now I can type `git lg` instead of `git log`!
-
 
 
 3. Take out extraneous descriptions when typing `git status`:
