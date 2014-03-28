@@ -284,13 +284,13 @@ history
 ```
 
 ####What configuration settings should I take advantage of?
-* #####Colors:
+	#####Colors:
 ```
 git config --global color.ui true 
 ```
 This turns on default terminal coloring. 
 
-* #####Start typing `git lg` instead of `git log` to seeing a cleaner log by configuring an alias:
+	#####Start typing `git lg` instead of `git log` to seeing a cleaner log by configuring an alias:
 ```
 git log --online --decorate --all --graph
 ```
@@ -302,11 +302,11 @@ git config --global alias.lg "log --oneline --decorate --all --graph
 W00t, now I can type `git lg` instead of `git log`!
 
 
-* #####Take out extraneous descriptions when typing `git status`:
+	#####Take out extraneous descriptions when typing `git status`:
 ```
 git status -s
 ```
-* #####Use aliases to get back a cleaner version of `git status` too!
+	#####Use aliases to get back a cleaner version of `git status` too!
 ```
 git config --global alias.s "status -s"
 ```
@@ -314,7 +314,7 @@ This allows you to type `git s` to get the equivalent of `git status -s`.
 
 Note that all the repositories you create will be configured at --global. If you must write `git config`, it silently implies `--local`.
 
-* #####Configure git so that when do a `git push` without specifying a branch, you push just to your branch, not to all matching branches. 
+	#####Configure git so that when do a `git push` without specifying a branch, you push just to your branch, not to all matching branches. 
 ```
 git config --global push.default simple
 ```
