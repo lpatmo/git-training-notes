@@ -4,12 +4,12 @@
 These are my edited notes from a day-long training held at Gilt by Github trainer https://twitter.com/PeterBell, organized in Q/A format. The training assumed that attendees were already familiar with using version control. 
 
 ####Table of Contents:
-I. General Notes to Remember
+I. General Commands to Remember
 II. Useful Tips
 III. How to Undo
-IV. External Resources
+V. External Resources
 
-###I. General Notes To Remember
+###I. General Commands To Remember
 #####How do I check or configure a user name?
 ```
 git config --global user.name
@@ -77,23 +77,97 @@ mv index.html home.htm
 #####What does it mean when your terminal tells you "your branch is ahead of 'origin/master' by 3 commits"?
 It just means that if you lose your laptop right now, you'll lose three commits. So you may want to commit. Typing `git status -s` (or `git s`, if you gave "status -s" an alias -- see below in the Useful Tips section) will not give you this extraneous descriptor.
 
-#####How do I make sure files are not tracked?
-  
+#####.gitignore?
+Example: put *.log into your .gitignore file in order to git ignore every file that ends with a .log
 
+Try typing `git status` after creating a test file called test.log. Notice that test.log did not show up as something to stage. 
 
+Note: If a person isn't seeing a file after cloning a repo, here are some useful places to check:
+```
+~/.gitignore
+```
+```
+open .git
+```
+```
+cat .git/info/exclude
+```
 
+#####How do I create and then merge a branch?
+```
+git checkout -b new_branch
+```
+creates a branch called new_branch.
+
+In practice, the only time you'd want to create a new branch is when you're ready to check out a branch; no one sits around at the start of a project and decides to create 50 branches from the start. 
+
+Also, a good practice is to delete a branch as soon as you've merged it in with master. You don't want to end up with too many branches that aren't being worked on anymore.
+
+```
+git checkout master
+git merge new_branch
+```
+merges the branch. Make sure you're in the `master` branch when you merge the side branch. 
+
+#####How do I do a recursive merge, and why is a recursive merge preferable to a fast-forward merge?
+```
+git merge --no-ff BRANCH
+```
+If you do a branch merge when nothing has happened with the master branch, git will "fast forward" -- or pretend that you had committed some changes to the master branch. This is bad because you lose the ability to see all of the individual commits when you do a fast foward. For example, if we git merge a branch when no change to the master has bee made, and if we do `git lg`, it'll look like we created the branch changes directly on the master branch when we didn't really. So it's best forwrd to do a recursive, or "no fast forward" `--no-ff` merge.
+
+#####How do I resolve a merge conflict?
+Step One:
+```
+git status
+```
+
+Step Two:
+Go into the file where the conflict exists and delete the lines git added. Edit as appropriate. Since the commit message will be called "merge conflict resolved," don't try to add in new features; just resolve the conflict. 
+
+A VIM trick: hit 'dd' before hitting 'I' to delete a entire line before going into INSERT mode.
+
+Step Three:
+After you've saved your changes, type:
+```
+git add <FILENAME>
+```
+
+Step Four:
+```
+git commit
+```
+Note that this is a straight-up "git commit" without a message. This resolves the merge, and you'll be transferred to VIM to write your merge resolve message.
 
 ###II. Useful Tips
+#####How do I see my history of what I typed into the terminal?
+```
+history
+```
+
 #####What configuration settings can I take advantage of?
 1. Colors:
 ```
 git config --global color.ui true 
 ```
-2. Take out extraneous descriptions:
+This turns on default terminal coloring. 
+
+2. Clean up `git log` output using `git lg` alias
+```
+git log --online --decorate --all --graph
+```
+This makes `git log` output a much cleaner history! So let's make an alias for it:
+
+```git config --global alias.lg "log --oneline --decorate --all --graph
+```
+W00t, now I can type `git lg` instead of `git log`!
+
+
+
+3. Take out extraneous descriptions when typing `git status`:
 ```
 git status -s
 ```
-3. USE ALIASES! For example:
+4. USE ALIASES! For example:
 ```
 git config --global alias.s "status -s"
 ```
@@ -130,6 +204,11 @@ ls -a
 ```
 This lists all hidden files.
 
+```
+git commit -am "commit messages"
+```
+This adds *and* commits the file(s). This won't work with untracked files, however. 
+
 #####How do I see all the changes going into the next commit?
 ```
 git diff
@@ -141,7 +220,8 @@ git diff --staged
 ```
 This will show us everything going into the next commit. 
 
-```git diff HEAD
+```
+git diff HEAD
 ```
 This will show you what's been modified by unstaged files AND staged changes. 
 
@@ -160,6 +240,9 @@ Note that there is a difference between un-staged and un-tracked files. Un-track
 ###III. How to Undo
 
 
-###IV. External Resources
+###IV. Working in Branches
+
+
+###V. External Resources
 1. http://training.github.com/kit/
 2. http://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
