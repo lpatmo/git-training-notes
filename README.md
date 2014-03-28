@@ -49,7 +49,7 @@ We ran out of time a little at the end rushing through cherrypicking and git sta
 * [How do I take the last two commits and squash them into one?](https://github.com/lpatmo/git-training-notes#how-do-i-take-the-last-two-commits-and-squash-them-into-one)
 * [What if I want a file that I excised via git reset --hard back within the next 30 days?](https://github.com/lpatmo/git-training-notes#what-if-i-want-a-file-that-i-excised-via-git-reset---hard-back-within-the-next-30-days)
 
-#####IV. Some External Resources
+#####[IV. Some External Resources](https://github.com/lpatmo/git-training-notes#iv-some-external-resources-1)
 
 ###I. General Commands To Remember
 ####How do I check or configure a username?
