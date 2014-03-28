@@ -4,10 +4,47 @@
 These are my edited notes from a day-long training held at Gilt by Github trainer https://twitter.com/PeterBell, organized in Q/A format. The training assumed that attendees were already familiar with using version control. 
 
 ####Table of Contents:
-#####I. General Commands to Remember
-[How do I check or configure a username?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-configure-a-username)
-#####II. Useful Tips
-#####III. Releasing to Production, Stashing, and How to Undo
+#####[I. General Commands to Remember](https://github.com/lpatmo/git-training-notes#i-general-commands-to-remember-1)
+*[How do I check or configure a username?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-configure-a-username)
+*[How do I check or change my e-mail address?](https://github.com/lpatmo/git-training-notes#how-do-i-check-or-change-my-e-mail-address)
+*[What's the most simple workflow for creating and pushing up to a repository?](https://github.com/lpatmo/git-training-notes#whats-the-most-simple-workflow-for-creating-and-pushing-up-to-a-repository)
+*[How do I rename or delete a file?](https://github.com/lpatmo/git-training-notes#how-do-i-rename-or-delete-a-file)
+*[How do I create a new branch?](https://github.com/lpatmo/git-training-notes#how-do-i-create-a-new-branch)
+*[How do I switch to a branch?](https://github.com/lpatmo/git-training-notes#how-do-i-switch-to-a-branch)
+*[How do I see all the branches?](https://github.com/lpatmo/git-training-notes#how-do-i-see-all-the-branches)
+*[What does it mean when your terminal tells you "your branch is ahead of 'origin/master' by 3 commits"?](https://github.com/lpatmo/git-training-notes#what-does-it-mean-when-your-terminal-tells-you-your-branch-is-ahead-of-originmaster-by-3-commits)
+*[.gitignore?](https://github.com/lpatmo/git-training-notes#gitignore)
+*[How do I create and then merge a branch?](https://github.com/lpatmo/git-training-notes#how-do-i-create-and-then-merge-a-branch)
+*[How do I do a recursive merge, and why is a recursive merge preferable to a fast-forward merge?](https://github.com/lpatmo/git-training-notes#how-do-i-do-a-recursive-merge-and-why-is-a-recursive-merge-preferable-to-a-fast-forward-merge)
+*[How do I resolve a merge conflict?](https://github.com/lpatmo/git-training-notes#how-do-i-resolve-a-merge-conflict)
+*[What is git rebase, and why do I need to do it?](https://github.com/lpatmo/git-training-notes#what-is-git-rebase-and-why-do-i-need-to-do-it)
+*[Can you give me an example of when I would use git rebase?](https://github.com/lpatmo/git-training-notes#can-you-give-me-an-example-of-when-i-would-use-git-rebase)
+*[What happens if there is a rebase conflict?](https://github.com/lpatmo/git-training-notes#what-happens-if-there-is-a-rebase-conflict)
+*[What do I do if I forget the --no-ff when I merge?](https://github.com/lpatmo/git-training-notes#what-do-i-do-if-i-forget-the---no-ff-when-i-merge)
+*[What is the difference between a git fetch and a git pull?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-a-git-fetch-and-a-git-pull)
+*[Why should I do a git fetch but not a git pull?](https://github.com/lpatmo/git-training-notes#why-should-i-do-a-git-fetch-but-not-a-git-pull)
+*[What is the difference between git pull --rebase' andgit fetch+git rebase origin master`?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-git-pull---rebase-andgit-fetchgit-rebase-origin-master)
+*[When would I clone a repository from the shared repository and when should I fork a repository?](https://github.com/lpatmo/git-training-notes#what-is-the-difference-between-git-pull---rebase-andgit-fetchgit-rebase-origin-master)
+
+#####[II. Useful Tips](https://github.com/lpatmo/git-training-notes#ii-useful-tips-1)
+*[How do I see a history of commands I typed into the terminal?](https://github.com/lpatmo/git-training-notes#how-do-i-see-a-history-of-commands-i-typed-into-the-terminal)
+*[What git configuration settings should I take advantage of?](https://github.com/lpatmo/git-training-notes#what-configuration-settings-can-i-take-advantage-of)
+*[https://github.com/lpatmo/git-training-notes#how-do-i-see-whats-under-the-hood-in-git](How do I see what's under the hood in git?)
+*[What are some shortcuts for adding or staging files?](https://github.com/lpatmo/git-training-notes#what-are-some-shortcuts-for-adding-or-staging-files)
+*[How do I see all the changes going into the next commit?](https://github.com/lpatmo/git-training-notes#how-do-i-see-all-the-changes-going-into-the-next-commit)
+*[What if I want to uncommit something from the staging area?](https://github.com/lpatmo/git-training-notes#what-if-i-want-to-uncommit-something-from-the-staging-area)
+
+#####[III. Releasing to Production, Stashing, and How to Undo](https://github.com/lpatmo/git-training-notes#iii-releasing-to-production-stashing-and-how-to-undo-1)
+*[What are tags?](https://github.com/lpatmo/git-training-notes#what-are-tags)
+*[What if we need to add a hotfix?](https://github.com/lpatmo/git-training-notes#what-if-we-need-to-add-a-hotfix)
+*[What is cherrypicking?](https://github.com/lpatmo/git-training-notes#what-is-cherrypicking)
+*[What is stashing?](https://github.com/lpatmo/git-training-notes#what-is-stashing)
+*[How do I undo a commit message message that the cat walked over?](https://github.com/lpatmo/git-training-notes#how-do-i-undo-a-commit-message-message-that-the-cat-walked-over)
+*[How do I undo any commit?](https://github.com/lpatmo/git-training-notes#how-do-i-undo-any-commit)
+*[Let's play with git reset! (a.k.a. 'What is git reset?')](https://github.com/lpatmo/git-training-notes#lets-play-with-git-reset-aka-what-is-git-reset)
+*[How do I take the last two commits and squash them into one?](https://github.com/lpatmo/git-training-notes#how-do-i-take-the-last-two-commits-and-squash-them-into-one)
+*[What if I want a file that I excised via git reset --hard back within the next 30 days?](https://github.com/lpatmo/git-training-notes#what-if-i-want-a-file-that-i-excised-via-git-reset---hard-back-within-the-next-30-days)
+
 #####IV. Some External Resources
 
 ###I. General Commands To Remember
@@ -136,21 +173,20 @@ git merge --no-ff BRANCH
 If you do a branch merge when nothing has happened with the master branch, git will "fast forward" -- or pretend that you had committed some changes to the master branch. This is bad because you lose the ability to see all of the individual commits when you do a fast foward. For example, if we git merge a branch when no change to the master has bee made, and if we do `git lg`, it'll look like we created the branch changes directly on the master branch when we didn't really. So it's best forwrd to do a recursive, or "no fast forward" `--no-ff` merge.
 
 ####How do I resolve a merge conflict?
-1. 
 ```
 git status
 ```
 
-2. Go into the file where the conflict exists and delete the lines git added. Edit as appropriate. Since the commit message will be called "merge conflict resolved," don't try to add in new features; just resolve the conflict. 
+Next, go into the file where the conflict exists and delete the lines git added. Edit as appropriate. Since the commit message will be called "merge conflict resolved," don't try to add in new features; just resolve the conflict. 
 
 A VIM trick: hit 'dd' before hitting 'I' to delete a entire line before going into INSERT mode.
 
-3. After you've saved your changes, type:
+After you've saved your changes, type:
 ```
 git add <FILENAME>
 ```
+... and then:
 
-4. 
 ```
 git commit
 ```
@@ -366,7 +402,7 @@ $ git tag -a r0.1.1 -m "hot fix for home page error"
 ```
 
 ####What is cherrypicking?
-Not sure yet. Ran over this to quickly. To Be Updated.
+Not sure yet. Ran over this too quickly. To Be Updated.
 
 ####What is stashing?
 Git stashing allows you to 'save' a piece of your work and move it to the side until you need it again. For example:
