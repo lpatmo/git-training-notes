@@ -283,14 +283,14 @@ Close working teammates should be added as COLLABORATORS on a repo so that every
 history
 ```
 
-####What configuration settings can I take advantage of?
-1. Colors:
+####What configuration settings should I take advantage of?
+*Colors:
 ```
 git config --global color.ui true 
 ```
 This turns on default terminal coloring. 
 
-2. Start typing `git lg` instead of `git log` to seeing a cleaner log by configuring an alias:
+*Start typing `git lg` instead of `git log` to seeing a cleaner log by configuring an alias:
 ```
 git log --online --decorate --all --graph
 ```
@@ -302,21 +302,15 @@ git config --global alias.lg "log --oneline --decorate --all --graph
 W00t, now I can type `git lg` instead of `git log`!
 
 
-3. Take out extraneous descriptions when typing `git status`:
+*Take out extraneous descriptions when typing `git status`:
 ```
 git status -s
 ```
-4. USE ALIASES! For example:
+*Use aliases to get back a cleaner version of `git status` too!
 ```
 git config --global alias.s "status -s"
 ```
 This allows you to type `git s` to get the equivalent of `git status -s`. 
-
-Also, be sure to take advantage of a cleaner `git log`:
-```
-git config --global alias.lg "log --oneline --decorate --all --graph"
-```
-This allows you to get back a clean log wheneve ryou type `git lg`.
 
 Note that all the repositories you create will be configured at --global. If you must write `git config`, it silently implies `--local`.
 
