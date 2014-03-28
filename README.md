@@ -4,13 +4,13 @@
 These are my edited notes from a day-long training held at Gilt by Github trainer https://twitter.com/PeterBell, organized in Q/A format. The training assumed that attendees were already familiar with using version control. 
 
 ####Table of Contents:
-I. General Commands to Remember
-II. Useful Tips
-III. How to Undo
-V. External Resources
+#####I. General Commands to Remember
+#####II. Useful Tips
+#####III. Releasing to Production, Stashing, and How to Undo
+#####IV. Some External Resources
 
 ###I. General Commands To Remember
-#####How do I check or configure a user name?
+####How do I check or configure a username?
 ```
 git config --global user.name
 ```
@@ -21,7 +21,7 @@ git config --global user.name "Daffy Duck"
 ```
 changes your user name to Daffy Duck.
 
-#####How do I check or change my e-mail address?
+####How do I check or change my e-mail address?
 ```
 git config --global user.email
 ```
@@ -34,7 +34,7 @@ git config --global user.email daffy@disney.com
 
 This changes your e-mail addresses.
 
-#####What's the most simple workflow for creating and pushing up to a repository?
+####What's the most simple workflow for creating and pushing up to a repository?
 1. `git init new_website`
 2. `cd new_website`
 3. `touch index.html about.html about.css contact.html` creates a couple of files that are both unstaged and untracked.
@@ -43,12 +43,12 @@ This changes your e-mail addresses.
 6. `git commit . -m "first commit!"` First commit of all the files!
 7. Go to github.com, log in, and manually create a new repository by clicking on a button.
 8. DO NOT hit the checkbox to initiate a README. Do pay attention to the last two lines on the page, though. 
-9. Copy/paste the last two lines in to your terminal. For example:
+9. Copy/paste the last two lines into your terminal. For example:
 ```
 git remote add origin https://github.com/USERNAME/new_website.git
-
 git push -u origin master
 ``` 
+Note that `git push -u origin master` does two things: 1) it pushes up; 2) `-u` sets the default to be upstream. If you don't have `-u`, the next time you push, you'd have to type `git push -u origin master` again instead of just `git push`.
 10. `git status`
 11. `git push` 
 12. If you refresh the page you created on github.com, you should see it change to reflect the file(s) you just pushed up.
@@ -61,7 +61,7 @@ git remote set-url origin https://github.com/USERNAME/new_website.git
 16. Another Windows note: if you're using HTTPS on windows, and you get an error that says "file doesn't exist for username," the person should just use SSH instead. This is a known bug. 
 17. Note for first-time git users: the first time you push to git, you'll have to input your username/password. You can set up github to bypass this step, though. Go to (https://help.github.com/articles/set-up-git and search for "password caching" to find out the steps how. 
 
-#####How do I rename or delete a file?
+####How do I rename or delete a file?
 ```
 git mv index.html home.htm
 ```
@@ -73,11 +73,30 @@ mv index.html home.htm
 ```
 ...git will think that home.htm is untracked and index.html was deleted, when it was really a rename. In this case, you'd have to do `git add -A` (note the capital A!) instead of a normal `git add .` which will only add untracked files or modified files, but not ALL files.
 
+####How do I create a new branch?
+```
+git branch name_of_branch
+```
+or
+```
+git checkout -b name_of_branch
+```
 
-#####What does it mean when your terminal tells you "your branch is ahead of 'origin/master' by 3 commits"?
+####How do I switch to a branch?
+```
+git checkout name_of_branch
+```
+
+####How do I see all the branches?
+```
+git branch
+```
+
+
+####What does it mean when your terminal tells you "your branch is ahead of 'origin/master' by 3 commits"?
 It just means that if you lose your laptop right now, you'll lose three commits. So you may want to commit. Typing `git status -s` (or `git s`, if you gave "status -s" an alias -- see below in the Useful Tips section) will not give you this extraneous descriptor.
 
-#####.gitignore?
+####.gitignore?
 Example: put *.log into your .gitignore file in order to git ignore every file that ends with a .log
 
 Try typing `git status` after creating a test file called test.log. Notice that test.log did not show up as something to stage. 
@@ -93,7 +112,7 @@ open .git
 cat .git/info/exclude
 ```
 
-#####How do I create and then merge a branch?
+####How do I create and then merge a branch?
 ```
 git checkout -b new_branch
 ```
@@ -109,49 +128,128 @@ git merge new_branch
 ```
 merges the branch. Make sure you're in the `master` branch when you merge the side branch. 
 
-#####How do I do a recursive merge, and why is a recursive merge preferable to a fast-forward merge?
+####How do I do a recursive merge, and why is a recursive merge preferable to a fast-forward merge?
 ```
 git merge --no-ff BRANCH
 ```
 If you do a branch merge when nothing has happened with the master branch, git will "fast forward" -- or pretend that you had committed some changes to the master branch. This is bad because you lose the ability to see all of the individual commits when you do a fast foward. For example, if we git merge a branch when no change to the master has bee made, and if we do `git lg`, it'll look like we created the branch changes directly on the master branch when we didn't really. So it's best forwrd to do a recursive, or "no fast forward" `--no-ff` merge.
 
-#####How do I resolve a merge conflict?
-Step One:
+####How do I resolve a merge conflict?
+1. 
 ```
 git status
 ```
 
-Step Two:
-Go into the file where the conflict exists and delete the lines git added. Edit as appropriate. Since the commit message will be called "merge conflict resolved," don't try to add in new features; just resolve the conflict. 
+2. Go into the file where the conflict exists and delete the lines git added. Edit as appropriate. Since the commit message will be called "merge conflict resolved," don't try to add in new features; just resolve the conflict. 
 
 A VIM trick: hit 'dd' before hitting 'I' to delete a entire line before going into INSERT mode.
 
-Step Three:
-After you've saved your changes, type:
+3. After you've saved your changes, type:
 ```
 git add <FILENAME>
 ```
 
-Step Four:
+4. 
 ```
 git commit
 ```
 Note that this is a straight-up "git commit" without a message. This resolves the merge, and you'll be transferred to VIM to write your merge resolve message.
 
+####What is `git rebase`, and why do I need to do it?
+Rebasing is the process of moving a branch to a new base commit. The primary reason for rebasing is to maintain a linear project history, making it look like the developers on your team only ever worked on one feature at a time. 
+
+####Can you give me an example of when I would use `git rebase`?
+Let's say you created a branch named `first_branch` and a branch named `second_account`. Then you created some files i each and added/committed the files. Next you'd do:
+```
+git checkout master
+git merge --no-ff first_branch
+git branch -d first_branch
+```
+In other words, you'd run a non-fast-forward merge of one of the branches with master (make sure you're in the master branch when you run the merge), and delete the branch right after you merge. Then:
+```
+git checkout second_branch
+git rebase master
+git lg
+``` 
+
+####Why is "Should I do git rebase or git merge?" not a useful question?
+This is not a useful question because a merge will always happen. You don't *have* to do rebase, but rebasing will help you when you look back through the history of commits and make progress tracking look more readable, since it'll look like you only worked on one feature at a time. The more people on the team who rebase, the cleaner the final history will appear.  
+
+####What happens if there is a rebase conflict?
+You'd resolve the conflict the same way you'd resolve a merge conflict -- by going into the file and editing/deleting lines as appropriate. The difference is that after you `git add .` and `git lg` and `git status`, you'd type `git rebase --continue` instead of `git commit`. Then you'd checkout the master branch again and merge the branch in question. Summary of steps below:
+```
+git merge --no-ff first_branch
+git branch -d first_branch
+git lg
+git checkout second_branch
+git rebase master
+vi fix-conflicts-in-this-file.html
+git add .
+git lg
+git status
+git rebase --continue
+git lg
+git checkout master
+git merge --no-ff second_branch -m "merged second branch"
+git lg
+git branch -d second_branch
+```
+
+Note that `git status` will tell you what need to do, in most cases. For exmple, right after I fixed my rebase conflict by going into the conflicted file, this is what `git status` told me:
+```
+$ git status
+# Not currently on any branch.
+# You are currently rebasing.
+#   (all conflicts fixed: run "git rebase --continue")
+#
+# Changes to be committed:
+#   (use "git reset HEAD <file>..." to unstage)
+#
+#     modified:   index.html
+#
+```
+
+####What do I do if I forget the `--no-ff` when I merge?
+You can go one step back in history on the master branch by typing:
+```
+git reset --keep master@{1}
+```
+
+####What is the difference between a `git fetch` and a `git pull`?
+
+`git pull` == `git fetch` + `git merge`. 
+
+In other words, `git fetch` fetches changes from github, but does not merge the changes. So after you fetch, you'd have to run `git merge origin/master` to merge the changes. 
+
+####Why should I do a `git fetch` but not a `git pull`?
+You should do a `git fetch` if you know you might get back a bunch of conflicts, and you know it's going to take a while to resolve the conflicts.
+
+####What is the difference between `git pull --rebase' and `git fetch` + `git rebase origin master`?
+No difference! They're the same. `git pull --rebase` is the shortcut version of saying `git fetch` and `git rebase origin master`. 
+
+####When would I clone a repository from the shared repository versus fork a repository?
+If you want to make a pull request, you'd need to FORK it, then git clone your own copy of the repository. Remember to git clone your own copy of the repo, not the original repo; otherwise, you won't be able to push up to it. 
+
+Pull requests are intended for development environments where the trust between the collaborators is low. That is, you'd submit pull requests if you were just starting out on a project, or contributing to a stranger's open source project.
+
+Close working teammates should be added as COLLABORATORS on a repo so that everyone has master pushing permissions.
+
+
+
 ###II. Useful Tips
-#####How do I see my history of what I typed into the terminal?
+####How do I see a history of commands I typed into the terminal?
 ```
 history
 ```
 
-#####What configuration settings can I take advantage of?
+####What configuration settings can I take advantage of?
 1. Colors:
 ```
 git config --global color.ui true 
 ```
 This turns on default terminal coloring. 
 
-2. Clean up `git log` output using `git lg` alias
+2. Start typing `git lg` instead of `git log` to seeing a cleaner log by configuring an alias:
 ```
 git log --online --decorate --all --graph
 ```
@@ -175,7 +273,15 @@ This allows you to type `git s` to get the equivalent of `git status -s`.
 
 Note that all the repositories you create will be configured at --global. If you must write `git config`, it silently implies `--local`.
 
-#####How do I see what's under the hood in git?
+4. Configure git so that when do a `git push` without specifying a branch, you push just to your branch, not to all matching branches. 
+```
+git config --global push.default simple
+```
+More information: http://blog.nicoschuele.com/posts/git-2-0-changes-push-default-to-simple
+
+Note that `git pull` is not branch-specific. 
+
+####How do I see what's under the hood in git?
 ```
 open .git
 ```
@@ -188,7 +294,7 @@ This lets you see everything in your hidden .gitconfig file, and you can edit th
 
 If I create a new file called index.css, there will be three objects added in .git. 
 
-#####What are some shortcuts for adding or staging files?
+####What are some shortcuts for adding or staging files?
 ```
 git add ab*
 ```
@@ -209,7 +315,12 @@ git commit -am "commit messages"
 ```
 This adds *and* commits the file(s). This won't work with untracked files, however. 
 
-#####How do I see all the changes going into the next commit?
+```
+git branch -a
+```
+This shows all hidden branches. 
+
+####How do I see all the changes going into the next commit?
 ```
 git diff
 ```
@@ -225,7 +336,7 @@ git diff HEAD
 ```
 This will show you what's been modified by unstaged files AND staged changes. 
 
-#####What if I want to uncommit something from the staging area?
+####What if I want to uncommit something from the staging area?
 For example, after I `git add .`, how do I unstage it? The answer is to use 
 ```
 git reset HEAD <file>
@@ -233,16 +344,149 @@ git reset HEAD <file>
 Note that there is a difference between un-staged and un-tracked files. Un-tracked files have never been added. Un-staged files are just not in the queue for being committed. 
 
 
+###III. Releasing to Production, Stashing, and How to Undo
+####What are tags?
+Whenever you release to production, you should add a tag. There are three types of tags, but the one recommended by Peter (the trainer) is the annotated tag. Example:
+```
+git tag -a r0.1 -m "initial home page release"
+```
+
+Then if you run `git show r0.1` you can see the tag message. s
+
+####What if we need to add a hotfix?
+```
+$ git checkout -b rb0.1
+//create a new branch
+//make the fixes
+//add and commit the fixes
+//push to production
+//then tag it as seen below
+$ git tag -a r0.1.1 -m "hot fix for home page error"
+```
+
+####What is cherrypicking?
+Not sure yet. Ran over this to quickly. To Be Updated.
+
+####What is stashing?
+Git stashing allows you to 'save' a piece of your work and move it to the side until you need it again. For example:
+
+```
+touch half_finished.html
+git stash
+```
+You created a half-finished file and stashed it.
+
+```
+git stash apply
+```
+This will get your stashed file back.
+
+You can switch to another branch and type `git stash apply` to get that file back too.
+
+You want to run `git stash pop` as the last place you want the stashed file to work.
+
+Another useful command:
+```
+git stash list
+```
+... allows you to see a lsit of what's happening.
+
+####How do I undo a commit message message that the cat walked over?
+Example problem:
+```
+git commit -m "added about us pagesldfjsdlfjsldfkjsdf"
+``
+Solution:
+```
+git commit --amend
+```
+Note that this only works on the *last* commit.
 
 
+####How do I undo any commit?
+Run `git lg` so you can see the hash of the commit. For example:
+```
+* 83f6a24 (HEAD, master) a bad idea
+* baa9473 added about us pages
+```
+In this case, you want to revert the "bad idea" commit message corresponding to 83f6a24. So you'd do:
+
+```
+git revert 83f6a24
+```
+
+Git will then create a new commit message stating that you reverted the mistake:
+
+```
+* c91ffbb (HEAD, master) Revert "a bad idea"
+* 83f6a24 a bad idea
+* baa9473 added about us pages
+```
+
+Yay! But what if you wanted to *revert* your revert?
+
+It's easy, now; just find the hash for the revert:
+
+```
+git revert c91ffbb
+```
+
+So now you'll have something like:
+```
+$ git lg
+* 80135c7 (HEAD, master) Revert "Revert "a bad idea""
+* c91ffbb Revert "a bad idea"
+* 83f6a24 a bad idea
+* baa9473 added about us pages
+```
+Basically, reverting doesn't change history; it just adds new history.
+
+####Let's play with git reset! (a.k.a. 'What is git reset?')
+
+Example:
+```
+git reset HEAD~2
+```
+...resets the last two commits from history.
+
+There are three types of `git reset`:
+
+```
+git reset --soft 
+```
+A soft reset will leave the files in the staging area.
+
+```
+git reset --mixed 
+```
+The files will be gone, but will still be left in the staging area.
+
+```
+git reset --hard 
+```
+Goodbye, files! They will be completley excised. 
+
+####How do I take the last two commits and squash them into one?
+```
+git reset --soft HEAD~2
+git commit -m "took the last two commits and squashed them into one"
+```
+
+####What if I want a file that I excised via `git reset --hard` back within the next 30 days?
+You can only do this if you're on *the same computer*, and it's not been more than 30 days:
+```
+git reflog
+```
+... to see a list of commit hashes.
+```
+git reset --hard 0e529c0
+```
+... assuming 0e529c0 is the hash you want. 
+
+This will undo your `git reset --hard`.
 
 
-###III. How to Undo
-
-
-###IV. Working in Branches
-
-
-###V. External Resources
-1. http://training.github.com/kit/
-2. http://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
+###V. Some External Resources
+* http://training.github.com/kit/
+* http://training.github.com/kit/downloads/github-git-cheat-sheet.pdf
+* https://www.atlassian.com/git/tutorial/rewriting-git-history#!rebase
