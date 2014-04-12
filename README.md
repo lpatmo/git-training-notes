@@ -1,7 +1,7 @@
 #Github Training Notes
 
 ####Background:
-On March, 27th, 2014, I attended a free day-long training held by Git trainer [@PeterBell](https://twitter.com/PeterBell) and TA'ed by Github's [@aidenfeldman](https://twitter.com/aidanfeldman). These are my edited notes from the day, organized in Question/Answer format. 
+On March 27th, 2014, I attended a free day-long training held by Git trainer [@PeterBell](https://twitter.com/PeterBell) and TA'ed by Github's [@aidenfeldman](https://twitter.com/aidanfeldman). These are my edited notes from the day, organized in Question/Answer format. 
 
 IMO, the training is really useful for the intermediate git user. One of the first things we did was to configure git to be more user-friendly, creating aliases such as `git lg` and `git s`. We also delved into more advanced topics such as when to branch, what to do with branches, how to merge branches without any fast forward `--no-ff`, the steps for resolving merge conflicts and rebase conflicts, why `rebase` should be used when working in teams, and how to undo almost any commit. 
 
